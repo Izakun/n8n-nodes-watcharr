@@ -16,7 +16,7 @@ export class Watcharr implements INodeType {
 	description: INodeTypeDescription = {
 		displayName: 'Watcharr',
 		name: 'watcharr',
-		icon: { light: 'file:watcharr.svg', dark: 'file:watcharr.svg' },
+		icon: { light: 'file:watcharr.svg', dark: 'file:watcharr.dark.svg' },
 		group: ['transform'],
 		version: 1,
 		subtitle: '={{$parameter["operation"]}}',
