@@ -44,7 +44,7 @@ export class WatcharrApi implements ICredentialType {
 		request: {
 			method: 'POST',
 			baseURL: '={{$credentials.baseUrl}}',
-			url: '/api/auth/login',
+			url: '/api/auth/',
 			body: {
 				username: '={{$credentials.username}}',
 				password: '={{$credentials.password}}',
