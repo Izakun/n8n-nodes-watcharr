@@ -52,7 +52,7 @@ export class Watcharr implements INodeType {
 				const operation = this.getNodeParameter('operation', i) as string;
 
 				// Step 1: log in to obtain a JWT.
-				const auth = (await this.helpers.httpRequest({
+				const auth = (await this.helpers.httpRequestWithAuthentication.call(this, 'watcharrApi', {
 					method: 'POST' as IHttpRequestMethods,
 					baseURL,
 					url: '/api/auth/login',
@@ -72,7 +72,7 @@ export class Watcharr implements INodeType {
 					getProfile: '/api/profile',
 				};
 
-				const response = await this.helpers.httpRequest({
+				const response = await this.helpers.httpRequestWithAuthentication.call(this, 'watcharrApi', {
 					method: 'GET' as IHttpRequestMethods,
 					baseURL,
 					url: urlByOp[operation],
