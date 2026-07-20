@@ -55,7 +55,7 @@ export class Watcharr implements INodeType {
 				const auth = (await this.helpers.httpRequestWithAuthentication.call(this, 'watcharrApi', {
 					method: 'POST' as IHttpRequestMethods,
 					baseURL,
-					url: '/api/auth/login',
+					url: '/api/auth/',
 					body: { username: credentials.username, password: credentials.password },
 					json: true,
 				} as IHttpRequestOptions)) as IDataObject;
@@ -76,7 +76,7 @@ export class Watcharr implements INodeType {
 					method: 'GET' as IHttpRequestMethods,
 					baseURL,
 					url: urlByOp[operation],
-					headers: { Authorization: `Bearer ${jwt}` },
+					headers: { Authorization: jwt },
 					json: true,
 				} as IHttpRequestOptions);
 
